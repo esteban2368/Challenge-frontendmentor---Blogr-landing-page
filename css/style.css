@@ -1,0 +1,224 @@
+
+/*----------------------------------
+        General styles
+------------------------------------*/
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root{
+    /*Font family*/
+    --global--font-primary: 'Overpass', sans-serif; 
+    --global--font-secundary: 'Ubuntu', sans-serif;
+    /* Font Size*/
+    --global--font-size-base: 1rem;
+	--global--font-size-xs: .875rem;
+	--global--font-size-sm: 1rem;
+	--global--font-size-md: 1.1rem;
+	--global--font-size-lg: 1.125rem;
+	--global--font-size-xl: 1.75rem;
+	--global--font-size-xxl: 2.5rem;
+	--global--font-size-xxxl: 3.5rem;
+    /* Headings */
+    --heading--font-family: var(--global--font-primary);
+	--heading--font-size-h6: var(--global--font-size-xs);
+	--heading--font-size-h5: var(--global--font-size-sm);
+	--heading--font-size-h4: var(--global--font-size-lg);
+	--heading--font-size-h3: calc(1.25 * var(--global--font-size-lg));
+	--heading--font-size-h2: var(--global--font-size-xl);
+	--heading--font-size-h1: var(--global--font-size-page-title);
+
+    /* Colors */
+    
+    --white: #ffffff;
+    --black: #000000;
+
+    /*Primary Colors*/
+
+    --light_red: hsl(356, 100%, 66%);
+    --very_light_red: hsl(355, 100%, 74%);
+    --very_dark_blue: hsl(208, 49%, 24%);
+
+     /*Gradiant Colors*/
+
+    --light_red_gradiant: hsl(353, 100%, 62%);
+    --very_light_red_gradiant: hsl(13, 100%, 72%);
+
+    /*Neutral Colors*/
+
+    --grayish_blue: hsl(240, 2%, 79%);
+    --dark_grayish_blue: hsl(207, 13%, 34%);
+    --dark_black_blue: hsl(240, 10%, 16%);
+}
+body{
+    font-size: var(--global--font-size-base);
+    font-family: var(--global--font-primary)
+}
+.container{
+    width: 100%;
+    max-width: 1140px;
+    margin: auto;
+
+    display: -moz-grid;
+    display: grid;
+    gap: 10px;
+    grid-template-rows: repeat(4, minmax(80px, auto));
+    grid-template-areas: "header     header      header"
+                         "banner     banner      banner"
+                         "section    section     section"
+                         "footer     footer      footer"
+}
+.container-inside{
+    width: 100%;
+    max-width: 950px;
+    margin: auto;
+}
+.display-1{
+    font-size: var(--global--font-size-xxxl);
+}
+.display-2{
+    font-size: var(--global--font-size-xxl);
+}
+.display-3{
+    font-size: var(--global--font-size-xl);
+}
+.display-4{
+    font-size: var(--global--font-size-lg);
+}
+.display-5{
+    font-size: var(--global--font-size-xs);
+}
+
+.text-white{
+    color: var(--white);
+}
+.margin-top{
+    margin-top: 15px;
+}
+.margin-rigth{
+    margin-right: 15px;
+}
+.margin-bottom{
+    margin-bottom: 15px;
+}
+.margin-left{
+    margin-left: 15px;
+}
+
+/*----------------------------------
+        styles component : Header
+------------------------------------*/
+.header{
+    grid-area: header;
+    
+    background-image: url(../images/bg-pattern-intro-desktop.svg), linear-gradient(90deg, var(--very_light_red_gradiant), var(--light_red_gradiant));
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: calc(100% - 10px) center;
+    border-radius: 0 0 0 70px;
+}
+
+/*----------------------------------
+        styles component : Logo
+------------------------------------*/
+.logo{
+    font-weight: 700;
+    margin-right: 20px;
+}
+/*----------------------------------
+        styles component : Navbar
+------------------------------------*/
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding-top: 2.5rem;
+}
+.navbar__container-nav{
+    display: inline-flex;
+    align-items: center;
+}
+.navbar__menu-items{
+    display: flex;
+    list-style: none;
+    color: var(--white);
+}
+.navbar__menu-item{
+    text-decoration: none;
+    display: inline-block;
+    margin: 0 1.2rem;
+}
+.navbar__submenu{
+    list-style: none;
+    display: none;
+}
+/*--------------------------------------
+        styles component : Banner main
+----------------------------------------*/
+
+.banner-main{
+    grid-area: banner;
+    min-height: 300px;
+    text-align: center;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+}
+/*--------------------------------------
+        styles component : Title
+----------------------------------------*/
+.title{
+    font-weight: 600;
+}
+/*--------------------------------------
+        styles component : Title
+----------------------------------------*/
+
+.paragrah{
+    font-weight: 300;
+}
+/*------------------------------------
+        styles component : button
+------------------------------------*/
+
+.button{
+    min-width: 120px;
+    padding: .6rem .5rem;
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 700;
+    text-align: center;
+    display: inline-block;
+    border-radius: 35px;
+    font-size: var(--global--font-size-xs);
+}
+
+.button--level2{
+    background-color: var(--white);
+    color: var(--light_red);
+}
+.button--level2:hover{
+    background-color: var(--very_light_red);
+    color: var(--white);
+}
+.button--level3{
+    border:solid 1px var(--white);
+
+}
+/*----------------------------------
+        styles component : Section
+------------------------------------*/
+
+.section{
+    grid-area: section;
+}
+/*-------------------------------------
+        styles component : Footer-site
+---------------------------------------*/
+
+.footer-site{
+    grid-area: footer;
+}
