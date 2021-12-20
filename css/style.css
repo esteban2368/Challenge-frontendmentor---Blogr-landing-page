@@ -74,6 +74,15 @@ body{
     max-width: 950px;
     margin: auto;
 }
+.img-bg{
+    position: absolute;
+    display: block;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    transform: scale(1.7,1.7) translateX(12vw);
+    z-index: 1;
+}
 .display-1{
     font-size: var(--global--font-size-xxxl);
 }
@@ -94,16 +103,16 @@ body{
     color: var(--white);
 }
 .margin-top{
-    margin-top: 15px;
+    margin-top: 15px !important;
 }
 .margin-rigth{
-    margin-right: 15px;
+    margin-right: 15px !important;
 }
 .margin-bottom{
-    margin-bottom: 15px;
+    margin-bottom: 15px !important;
 }
 .margin-left{
-    margin-left: 15px;
+    margin-left: 15px !important;
 }
 
 /*----------------------------------
@@ -112,14 +121,11 @@ body{
 .header{
     grid-area: header;
     
-    background-image: url(../images/bg-pattern-intro-desktop.svg), linear-gradient(90deg, var(--very_light_red_gradiant), var(--light_red_gradiant));
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: calc(100% - 10px) center;
+    position: relative;
+    background-image: linear-gradient(90deg, var(--very_light_red_gradiant), var(--light_red_gradiant));
     border-radius: 0 0 0 70px;
+    overflow: hidden;
 }
-
 /*----------------------------------
         styles component : Logo
 ------------------------------------*/
@@ -131,11 +137,13 @@ body{
         styles component : Navbar
 ------------------------------------*/
 .navbar{
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
 
     padding-top: 2.5rem;
+    z-index: 3;
 }
 .navbar__container-nav{
     display: inline-flex;
@@ -147,25 +155,52 @@ body{
     color: var(--white);
 }
 .navbar__menu-item{
+    position: relative;
+    text-decoration: none;
+}
+.navbar__menu-link{
     text-decoration: none;
     display: inline-block;
+    color: var(--white);
     margin: 0 1.2rem;
 }
+.navbar__menu-link--submenu{
+    color: var(--black);
+    font-weight: 500;
+}
+.navbar__menu-link--submenu:hover{
+    font-weight: 700;
+}
+.navbar__menu-link--showSubmenu:focus + .navbar__submenu{
+    opacity: 1;
+    transform: translateY(0px);
+}
 .navbar__submenu{
+    position: absolute;
+    left: 0;
+    top: 40px;
     list-style: none;
-    display: none;
+    opacity: 0;
+    background-color: var(--white);
+    min-width: 160px;
+    padding: 25px 0;
+    border-radius: 6px;
+    transition: all ease-in .2s;
+    transform: translateY(-10px);
 }
 /*--------------------------------------
         styles component : Banner main
 ----------------------------------------*/
 
 .banner-main{
+    position: relative;
     grid-area: banner;
     min-height: 300px;
     text-align: center;
     display: flex;
     flex-flow: column wrap;
     justify-content: center;
+    z-index: 2;
 }
 /*--------------------------------------
         styles component : Title
@@ -174,7 +209,7 @@ body{
     font-weight: 600;
 }
 /*--------------------------------------
-        styles component : Title
+        styles component : Paragrah
 ----------------------------------------*/
 
 .paragrah{
