@@ -67,9 +67,8 @@ body{
     display: -moz-grid;
     display: grid;
     gap: 10px;
-    grid-template-rows: repeat(4, minmax(80px, auto));
+    grid-template-rows: repeat(3, minmax(200px, auto));
     grid-template-areas: "header     header      header"
-                         "banner     banner      banner"
                          "section    section     section"
                          "footer     footer      footer"
 }
@@ -129,6 +128,9 @@ body{
 .margin-top-xl{
     margin-top: 7rem !important;
 }
+.margin-bottom-sm{
+    margin-bottom: 1.5rem !important;
+}
 .margin-bottom-md{
     margin-bottom: 3rem !important;
 }
@@ -172,6 +174,9 @@ body{
     font-weight: 700;
     margin-right: 20px;
 }
+.logo__img{
+    width: 70px;
+}
 /*----------------------------------
         styles component : Navbar
 ------------------------------------*/
@@ -203,12 +208,20 @@ body{
     color: var(--white);
     margin: 0 1.2rem;
 }
+.navbar__menu-link:hover{
+    text-decoration: underline;
+}
+.navbar__menu-link:focus > .icon--arrow-light{
+    transform: rotate(180deg);
+    transition: all ease .2s;
+}
 .navbar__menu-link--submenu{
     color: var(--black);
     font-weight: 500;
 }
 .navbar__menu-link--submenu:hover{
     font-weight: 700;
+    text-decoration: none;
 }
 .navbar__menu-link--showSubmenu:focus + .navbar__submenu{
     opacity: 1;
@@ -227,13 +240,24 @@ body{
     transition: all ease-in .2s;
     transform: translateY(-10px);
 }
+/*----------------------------------
+        styles component : Logo
+------------------------------------*/
+.icon{
+    display: inline-block;
+    width: 10px;
+    height: 7px;
+    margin-left: 5px;
+}
+.icon--arrow-light{
+    background-image: url(../images/icon-arrow-light.svg);
+}
 /*--------------------------------------
         styles component : Banner main
 ----------------------------------------*/
 
 .banner-main{
     position: relative;
-    grid-area: banner;
     min-height: 300px;
     text-align: center;
     display: flex;
@@ -274,6 +298,7 @@ body{
     display: inline-block;
     border-radius: 35px;
     font-size: var(--global--font-size-xs);
+    transition: all ease .3s;
 }
 
 .button--level2{
@@ -334,4 +359,34 @@ body{
 
 .footer-site{
     grid-area: footer;
+    background-color: var(--dark_black_blue);
+    border-radius: 0 70px 0 0;
+}
+.footer-site__container{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+
+}
+.footer-site__column{
+    display: flex;
+    flex-flow: column wrap;
+    font-family: var(--global--font-secundary);
+}
+.footer-side__title{
+    color: var(--white);
+    font-weight: 500;
+}
+.footer-site__link{
+    color: var(--white);
+    text-decoration: none;
+    font-size: var(--global--font-size-xs);
+    margin-bottom: .7rem;
+}
+.footer-site__link:hover{
+    text-decoration: underline;
 }
