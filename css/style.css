@@ -50,6 +50,7 @@
 
     /*Neutral Colors*/
 
+    --grey_light: #efeff1;
     --grayish_blue: hsl(240, 2%, 79%);
     --dark_grayish_blue: hsl(207, 13%, 34%);
     --dark_black_blue: hsl(240, 10%, 16%);
@@ -153,7 +154,9 @@ body{
 .text-center{
     text-align: center !important;
 }
-
+.margin-bottom-0{
+    margin-bottom: 0 !important;
+}
 .d-flex{
     display: flex !important;
 }
@@ -162,6 +165,12 @@ body{
 }
 .justify-content-center{
     justify-content: center !important;
+}
+.d-none{
+    display: none !important;
+}
+.d-block{
+    display: block !important;
 }
 /*----------------------------------
         styles component : Header
@@ -215,10 +224,12 @@ body{
     display: inline-block;
     color: var(--white);
     margin: 0 1.2rem;
+    font-weight: 600;
 }
 .navbar__menu-link:hover{
     text-decoration: underline;
 }
+.navbar-responsive__menu-link:focus > .icon--arrow-dark,
 .navbar__menu-link:focus > .icon--arrow-light{
     transform: rotate(180deg);
     transition: all ease .2s;
@@ -249,6 +260,74 @@ body{
     transform: translateY(-10px);
 }
 /*----------------------------------
+        styles component : Navbar responsive
+------------------------------------*/
+.navbar-responsive{
+    position: absolute;
+    width: 100%;
+    max-width: 340px;
+    margin: auto;
+    top: 27%;
+    left: 50%;
+    transform: translate(-50%,-15%);
+    font-weight: 600;
+    background-color: var(--white);
+    padding: 30px 20px;
+    border-radius: 6px;
+    -webkit-box-shadow: 1px 3px 7px 3px rgba(116,116,116,0.2); 
+    box-shadow: 1px 3px 7px 3px rgb(116 116 116 / 20%);
+    z-index: 10;
+}
+.navbar-responsive__menu-item{
+    margin-bottom: 15px;
+}
+.navbar-responsive__menu-items{
+    list-style: none;
+    text-align: center;
+}
+.navbar-responsive__submenu{
+    list-style: none;
+    background-color: var(--grey_light);
+    padding: 20px 15px;
+    border-radius: 6px;
+    transition: all ease-in .2s;
+
+}
+.navbar-responsive__menu-link{
+    display: inline-block;
+    text-decoration: none;
+    color: var(--very_dark_blue);
+}
+.navbar-responsive__menu-link--submenu{
+    
+}
+.navbar-responsive__button{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.navbar-responsive__menu-link--showSubmenu:focus + .navbar-responsive__submenu{
+    height: auto;
+    padding: auto;
+    margin: 20px 0;
+    overflow:auto
+}
+.navbar-responsive__menu-link--showSubmenu:not(:focus) + .navbar-responsive__submenu{
+    height: 0;
+    padding: 0;
+    overflow:hidden
+}
+/*----------------------------------
+        styles component : Separate
+------------------------------------*/
+.separate{
+    margin-top: 15px;
+    height: 2px;
+    border: 0;
+    background-color: #e4e4e4;
+}
+/*----------------------------------
         styles component : Logo
 ------------------------------------*/
 .icon{
@@ -257,11 +336,69 @@ body{
     height: 7px;
     margin-left: 5px;
 }
+.icon--2x{
+    width: 20px;
+    height: 20px;
+}
+.icon--3x{
+    width: 30px;
+    height: 18px;
+}
+.icon--4x{
+    width: 70px;
+    height: 70px;
+}
 .icon--arrow-light{
     background-image: url(../images/icon-arrow-light.svg);
 }
+.icon--arrow-dark{
+    background-image: url(../images/icon-arrow-dark.svg);
+}
+.icon--hamburger{
+    background-image: url(../images/icon-hamburger.svg);
+}
+/*----------------------------------
+    styles component : icon-burguer
+------------------------------------*/
+.icon-burguer{
+    width: 30px;
+    height: 2px;
+    background-color: var(--white);
+    border-radius: 5px;
+
+    display: flex;
+    align-items: center;
+    transition: all .5s ease-in-out;
+}
+.icon-burguer::before{
+    transform: translateY(-10px);
+}
+.icon-burguer::after{
+    transform: translateY(10px);
+}
+.icon-burguer::before,
+.icon-burguer::after{
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 2px;
+    background-color: var(--white);
+    border-radius: 5px;
+
+    transition: all .5s ease-in-out;
+
+}
+.button--navbar.open .icon-burguer{
+    background-color: transparent;
+}
+.button--navbar.open .icon-burguer::before{
+    transform: translateY(0px) rotate(45deg);
+}
+.button--navbar.open .icon-burguer::after{
+    transform: translateY(0px) rotate(135deg);
+}
 /*--------------------------------------
-        styles component : Banner main
+    styles component : Banner main
 ----------------------------------------*/
 
 .banner-main{
@@ -298,13 +435,14 @@ body{
 
 .button{
     min-width: 120px;
-    padding: .6rem .5rem;
+    padding: .8rem .5rem;
     color: var(--white);
     text-decoration: none;
     font-weight: 700;
     text-align: center;
     display: inline-block;
     border-radius: 35px;
+    cursor: pointer;
     font-size: var(--global--font-size-xs);
     transition: all ease .3s;
 }
@@ -319,7 +457,24 @@ body{
 }
 .button--level3{
     border:solid 1px var(--white);
-
+}
+.button--level4{
+    background-color: var(--white);
+    color: var(--very_dark_blue);
+    padding: 0;
+}
+.button--level5{
+    background-image: linear-gradient(90deg, var(--very_light_red_gradiant), var(--light_red_gradiant));
+    color: var(--white);
+}
+.button--navbar{
+    background-color: transparent;
+    border:none;
+    min-width: 0;
+    width: 33px;
+    height: 30px;
+    padding: .2rem;
+    border-radius: 0;
 }
 /*----------------------------------
         styles component : image
@@ -433,6 +588,13 @@ body{
     .order-md-1{
         order: 1;
     }
+    .d-md-none{
+        display: none !important;
+    }
+    .d-md-block{
+        display: block !important;
+    }
+
 
     /*Title component styles */
 
