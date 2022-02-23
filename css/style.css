@@ -510,7 +510,6 @@ body{
     background-image: url(../images/bg-pattern-circles.svg), linear-gradient(90deg, var(--Very_dark_gray_blue), var(--Very_dark_desaturated_blue));
     background-position-y: -167px;
     background-size:cover;
-    background-repeat: no-repeat;
     color: var(--white);
     border-radius: 0 70px 0 70px;
 }
