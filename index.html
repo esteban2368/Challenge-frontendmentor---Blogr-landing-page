@@ -20,6 +20,7 @@
 </head>
 <body>
   <div class="container">
+    <div class="overlay"></div>
     <header class="header">
       <img src="./images/bg-pattern-intro-desktop.svg" role="presentation" class="img-bg" alt="">
       <div class="navbar container-inside">
@@ -77,24 +78,26 @@
       </div>
     </header>
     <main class="section margin-top-lg margin-top-md-lg">
-      <h2 class="title display-3 text-center">Designed for the future</h2>
-      <section class="section__content container-section">
-        <div class="section__text padding-left order-md-1 padding-top-md">
-          <h2 class="title display-3 margin-bottom text-center-md">Introducing an extensible editor</h2>
-          <p class="paragrah margin-bottom-md text-center-md">Blogr features an exceedingly intuitive interface which lets you focus on one thing: creating content. 
+      <h2 class="title display-3 text-center animate">Designed for the future</h2>
+      <section class="section__content container-section animate">
+        <div class="section__text order-md-1 padding-top-md margin-left animate">
+          <h2 class="title display-4 margin-bottom text-center-md animate">Introducing an extensible editor</h2>
+          <p class="paragrah margin-bottom-md text-center-md animate">Blogr features an exceedingly intuitive interface which lets you focus on one thing: creating content. 
             The editor supports management of multiple blogs and allows easy manipulation of embeds such as images, 
             videos, and Markdown. Extensibility with plugins and themes provide easy ways to add functionality or 
             change the looks of a blog.</p>
-          <h2 class="title display-3 margin-bottom text-center-md">Robust content management</h2>
-          <p class="paragrah text-center-md">Flexible content management enables users to easily move through posts. Increase the usability of your blog 
+          <h2 class="title display-4 margin-bottom text-center-md animate">Robust content management</h2>
+          <p class="paragrah text-center-md animate">Flexible content management enables users to easily move through posts. Increase the usability of your blog 
             by adding customized categories, sections, format, or flow. With this functionality, you’re in full control.</p>
         </div>
-        <img src="./images/illustration-editor-mobile.svg" class="section__img section__img--editor-mobile padding-top-md order-md-0" alt="">
-        <img src="./images/illustration-editor-desktop.svg" class="section__img section__img--editor-desktop" alt="">
+        <img src="./images/illustration-editor-mobile.svg" class="section__img section__img--editor-mobile padding-top-md order-md-0 animate" alt="">
+        <img src="./images/illustration-editor-desktop.svg" class="section__img section__img--editor-desktop animate" alt="">
       </section>
-      <section class="section__content section__content--phone margin-top-lg margin-bottom-lg margin-bottom-md-lg">
+      <section class="section__content section__content--phone margin-top-xl margin-bottom-xl margin-bottom-md-lg animate">
         <div class="container-section d-flex align-items-center flex-md-column">
-          <img src="./images/illustration-phones.svg" class="img img__phone" alt="">
+          <div class="img-container">
+            <img src="./images/illustration-phones.svg" class="img img__phone" alt="">
+          </div>
           <div class="section__text">
             <h2 class="title display-3 margin-bottom text-white text-center-md">State of the Art Infrastructure</h2>
             <p class="paragrah text-white text-center-md">With reliability and speed in mind, worldwide data centers provide the backbone for ultra-fast connectivity. 
@@ -102,8 +105,8 @@
           </div>
         </div>
       </section>
-      <section class="section__content margin-top-xl margin-bottom-lg margin-top-md-lg">
-        <img src="./images/illustration-laptop-mobile.svg" class="section__img section__img--laptop-mobile" alt="">
+      <section class="section__content margin-top-xl margin-bottom-lg margin-top-md-lg animate">
+        <img src="./images/illustration-laptop-mobile.svg" class="section__img section__img--laptop-mobile animate" alt="">
         <img src="./images/illustration-laptop-desktop.svg" class="section__img section__img--laptop-desktop" alt="">
         <div class="section__text padding-right padding-top-md">
           <h2 class="title display-3 margin-bottom text-center-md">Free, open, simple</h2>
@@ -151,7 +154,7 @@
       Coded by <a href="#">Your Name Here</a>.
     </div> -->
   </div>
-  <div class="navbar-responsive">
+  <div class="navbar-responsive navbar-responsive--sticky">
     <ul class="navbar-responsive__menu-items">
       <li class="navbar-responsive__menu-item"><a href="#" class="navbar-responsive__menu-link navbar-responsive__menu-link--showSubmenu">Product <span class="icon icon--arrow-dark"></a>
         <ul class="navbar-responsive__submenu">
